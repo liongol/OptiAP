@@ -18,26 +18,79 @@
 #include "rgb_led.h"
 #include "common.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/**
+ * @brief Structure to hold the FTM responder data
+ * 
+ */
 typedef struct {
     uint8_t mac[6];
     uint8_t channel;
     int8_t rssi;
 } ftm_responder_t;
 
+/**
+ * @brief Event group for the FTM procedure
+ * 
+ */
 extern EventGroupHandle_t ftm_event_group;
+
+/**
+ * @brief Bit for the FTM success
+ * 
+ */
 #define FTM_SUCCESS_BIT BIT0
+
+/**
+ * @brief Bit for the FTM failure
+ * 
+ */
 #define FTM_FAILURE_BIT BIT1
 
+
+/**
+ * @brief Raw RTT value
+ * 
+ */
 extern uint32_t rtt_raw;
+
+/**
+ * @brief RTT estimate
+ * 
+ */
 extern uint32_t rtt_est;
+
+/**
+ * @brief Distance estimate
+ * 
+ */
 extern uint32_t dist_est;
 
+/**
+ * @brief Number of (MAX) FTM responders
+ * 
+ */
 #define MAX_FTM_RESPONDERS 64
 
+/**
+ * @brief IP address of the latest connected device
+ * 
+ */
 extern esp_ip4_addr_t server_ip;
 
+/**
+ * @brief Handle for the HTTP client
+ * 
+ */
 extern esp_http_client_handle_t client;
 
+/**
+ * @brief Tag for the Wi-Fi
+ * 
+ */
 #define TAG_WIFI "WIFI"
 
 /**
@@ -112,3 +165,7 @@ void ftm_procedure(void *btn_plus_task_to_create);
  * @return ESP_OK if the data was successfully posted, ESP_FAIL otherwise
  */
 esp_err_t http_post_data(char *post_data);
+
+#ifdef __cplusplus
+}
+#endif
