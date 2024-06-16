@@ -1,13 +1,16 @@
 from flask import Flask, request, jsonify, make_response
 from flask_cors import CORS
-
-# Add a way to send the esp32 Agent the data
+from measure_distance import average_trilateration, create_distance_coordinates_list
+from k_means import prepare_single_measure_data, k_means_algorithm
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})  # Allow only localhost:3000
 
-raw_measurements = []
-processed_measurement = []
+raw_measurements = []  # the measurements received with the mac addresses
+id_measurements = [] # return the measurements with ids instead of mca adress
+measurements_xy_array = []  # the location of each measurement which matches the index in the list
+processed_measurement = []  # measurements with the locations of the agent ready for k-means algorithm
+data_for_k_means = []
 beacon_locations = {}
 beacon_colors = {}
 map_size = (0, 0)
@@ -89,6 +92,19 @@ def done():
         {"x": 300, "y": 400}
     ]
 
+    for measurement in raw_measurements:
+        id_measurements.append(create_distance_coordinates_list(measurement, beacon_locations))
+
+    for distances_and_points in id_measurements:
+        measurements_xy_array.append(average_trilateration(distances_and_points))
+
+    for measurements_xy in measurements_xy_array:
+        data_for_k_means.append(
+            prepare_single_measure_data(measurements_xy, raw_measurements[measurements_xy_array.index(measurements_xy)],
+                                        beacon_locations))
+
+    # Sample data (replace with your own data)
+    k_means_algorithm(data_for_k_means)
     # Respond with a success message and the optimal_locations array
     return jsonify({
         'status': 'success',
