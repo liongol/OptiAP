@@ -8,8 +8,20 @@
 
 #include "common.h"
 
-// Button configuration
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/**
+ * @brief GPIO pin for the button
+ * 
+ */
 #define BUTTON_GPIO CONFIG_BUTTON_GPIO
+
+/**
+ * @brief Button tag
+ * 
+ */
 
 #define TAG_BUTTON "BUTTON"
 
@@ -71,3 +83,7 @@ void button_long_press_cb(void *btn, void *task_to_create);
  *      - ESP_FAIL otherwise
  */
 esp_err_t assign_functionalities_to_button(button_handle_t *btn, TaskFunction_t task_to_create1, TaskFunction_t task_to_create2, TaskFunction_t task_to_create3);
+
+#ifdef __cplusplus
+}
+#endif
