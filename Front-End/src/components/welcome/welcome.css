@@ -14,7 +14,7 @@
     padding-right: 70px;
 }
 
-.image {
+.imageWelcome {
     width: 80%;
     border-radius: 100px;
     border: 1px solid #e5e5e5;
@@ -29,7 +29,6 @@
     font-weight: 500;
     line-height: 31px;
 }
-
 
 td{
     vertical-align: middle;
