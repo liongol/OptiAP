@@ -16,7 +16,7 @@ function Welcome(props) {
                 <tr/><tr/>
                 <tr>
                     <td className="welcome">Welcome to OptiAP</td>
-                    <td><img className="image" src={logo} alt='Logo' /></td>
+                    <td><img className="imageWelcome" src={logo} alt='Logo'/></td>
                 </tr>
                 <tr>
                     <td className="para">Setting up wireless access points efficiently for optimal signal coverage</td>
