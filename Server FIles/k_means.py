@@ -29,51 +29,58 @@ def extract_first_two_elements(list_of_lists):
     return [[int(round(sublist[0])), int(round(sublist[1]))] for sublist in list_of_lists]
 
 
+def extract_first_two_elements(arrays):
+    return [arr[:2].tolist() for arr in arrays]  # Use tolist() to convert numpy arrays to Python lists
+
+
+
 def k_means_algorithm(data_for_k_means):
+    if not data_for_k_means or len(data_for_k_means) < 1:
+        print("Insufficient data for K-Means.")
+        return
+
     data = np.array(data_for_k_means)
 
-    # Define range of cluster numbers
-    k_values = range(1, len(data_for_k_means))
+    max_clusters = len(data)
+    if max_clusters < 2:
+        print("Not enough data points for multiple clusters.")
+        return
 
-    # Calculate WCSS for each cluster number
+    k_values = range(1, max_clusters)
     wcss = []
     for k in k_values:
         kmeans = KMeans(n_clusters=k)
         kmeans.fit(data)
         wcss.append(kmeans.inertia_)
 
-    # Identify the elbow point
-    kn = KneeLocator(list(k_values), wcss, curve='convex', direction='decreasing')
-    chosen_num_of_aps = kn.elbow
+    if len(wcss) < 2:
+        print("Not enough data to determine the elbow point.")
+        return
 
-    if chosen_num_of_aps is None:
-        chosen_num_of_aps = 1
+    #kn = KneeLocator(list(k_values), wcss, curve='convex', direction='decreasing')
+    #chosen_num_of_aps = kn.elbow
+    #if chosen_num_of_aps is None:
+    chosen_num_of_aps = 1
+
+    #if chosen_num_of_aps > 10:
+     #   chosen_num_of_aps = 10
+
     print("Optimal number of clusters:", chosen_num_of_aps)
 
-    # Plot WCSS against number of clusters with the elbow point
+    plt.figure()
     plt.plot(k_values, wcss, marker='o')
     plt.xlabel('Number of clusters')
-    plt.ylabel('Within-cluster sum of squares (WCSS)')
+    plt.ylabel('WCSS')
     plt.title('Elbow Method')
-    plt.scatter(chosen_num_of_aps, wcss[chosen_num_of_aps-1], color='red') # highlight the elbow point
+    if chosen_num_of_aps is not None:
+        plt.scatter(chosen_num_of_aps, wcss[chosen_num_of_aps - 1], color='red')
 
-    # Instantiate KMeans object
     kmeans = KMeans(n_clusters=chosen_num_of_aps)
-
-    # Fit the model to the data
     kmeans.fit(data)
-
-    # Retrieve cluster centers
     cluster_centers = kmeans.cluster_centers_
     optimal_coordinates = extract_first_two_elements(cluster_centers)
     print("Cluster centers:", optimal_coordinates)
 
-    # Predict cluster assignments
     labels = kmeans.predict(data)
-    print("Cluster labels:", labels)
 
-    # remaining tasks:
-    '''
-     1. making all the measurement be the same dimension using padding
-     2. how to define the k? - kneed library
-    '''
+    return optimal_coordinates  # This now returns a list of lists directly

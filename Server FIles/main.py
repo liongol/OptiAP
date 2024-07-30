@@ -31,6 +31,8 @@ beacon_locations = {
 for measurement in raw_measurements:
     id_measurements.append(create_distance_coordinates_list(measurement, beacon_locations))
 
+print(id_measurements)
+
 for distances_and_points in id_measurements:
     measurements_xy_array.append(average_trilateration(distances_and_points))
 
@@ -39,13 +41,16 @@ print("The point you're standing at:", measurements_xy_array)
 
 # preparing data for K-means
 for measurements_xy in measurements_xy_array:
-    data_for_k_means.append(prepare_single_measure_data(measurements_xy, raw_measurements[measurements_xy_array.index(measurements_xy)],beacon_locations))
+    data_for_k_means.append(prepare_single_measure_data(measurements_xy,
+                                                        raw_measurements[measurements_xy_array.index(measurements_xy)],
+                                                        beacon_locations))
 
 
 # Sample data (replace with your own data)
 from k_means import prepare_single_measure_data
-k_means_algorithm(data_for_k_means)
+optimal_locations = k_means_algorithm(data_for_k_means)
 
+print(optimal_locations)
 # process for k-means data preparing:
 '''
  1. making distance and point list by sending to create_distance_coordinates_list() the measure data
