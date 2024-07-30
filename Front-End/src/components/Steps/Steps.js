@@ -68,6 +68,9 @@ function Steps(props) {
             fromBeginning = calculateXYDistances(beginningOfAxis,coordinate);
             tmp.push({x : fromBeginning.xDistance / ratioMap, y:fromBeginning.yDistance / ratioMap});
         });
+        console.log("this is the returned tmp:");
+        console.log(tmp);
+        tmp = [1]
         setArrayApsLocations(tmp);
     }
 
@@ -82,12 +85,14 @@ function Steps(props) {
             .catch((error) => console.error(error));
     }
 
-    const SendDone = (arrayBeaconsLocations) => {
+    const SendDone = () => {
         axios.get(`${baseURL}/done`)
             .then((response) => {
+                console.log(response)
                 const arrayApsLocations = response.data.optimal_locations;
                 setArrayApsLocations(arrayApsLocations);
                 APsReturnedToMapValues();
+                console.log("the array of optimal locations ::::::::::");
                 console.log(arrayApsLocations); // This will log the arrayApsLocations array
                 setStepNumber('5');
         })
@@ -121,7 +126,7 @@ function Steps(props) {
                 step = <Step4 goToPage = {props.goToPage} setStepNumber={setStepNumber} uploadedImg = {uploadedImg}
                               arrayBoundingImg={arrayBoundingImg} arrayBeaconsLocations={arrayBeaconsLocations} setArrayBeaconsLocations={setArrayBeaconsLocations}
                               SendBeacnosLocAndRGB = {SendBeacnosLocAndRGB} CorrectBeaconsLocations = {CorrectBeaconsLocations}
-                              setArrayTwoDotsImg={setArrayTwoDotsImg} setDistance={setDistanceBetweenTwoDots}/>;
+                              setArrayTwoDotsImg={setArrayTwoDotsImg} setDistance={setDistanceBetweenTwoDots} SendDone = {SendDone}/>;
                 break;
             case 'loading':
                 step= <LoadingScreen/>;

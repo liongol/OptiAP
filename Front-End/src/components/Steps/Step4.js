@@ -81,8 +81,8 @@ const Step4 =(props)=>
                         key={index}
                         style={{
                             position: 'absolute',
-                      /*       left: coordinate.x,
-                            top: coordinate.y, */
+                             left: coordinate.x,
+                            top: coordinate.y, 
                             width: '10px',
                             height: '10px',
                             borderRadius: '50%',
@@ -102,6 +102,7 @@ const Step4 =(props)=>
                             props.CorrectBeaconsLocations();
                             props.setStepNumber('loading');
                             props.SendBeacnosLocAndRGB(props.arrayBeaconsLocations);
+                            props.SendDone();
                         }}
                     >
                         Next
