@@ -1,7 +1,6 @@
 {
   "projects": {
-    "default": "ap-optimal",
-    "ap-optimal-staging": "ap-optimal"
+    "default": "ap-optimal"
   },
   "targets": {},
   "etags": {},
