@@ -15,6 +15,6 @@
   },
   "functions": {
     "source": "functions",
-    "runtime": "nodejs14"  // Ensure the runtime matches the Node.js version in the GitHub Actions workflow
+    "runtime": "nodejs18"  
   }
 }
