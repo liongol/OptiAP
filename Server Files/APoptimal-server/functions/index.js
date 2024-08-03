@@ -1,12 +1,18 @@
 const functions = require('firebase-functions');
-const { exec } = require('child_process');
+const { spawn } = require('child_process');
 
 exports.app = functions.https.onRequest((req, res) => {
-  exec('python ../APoptimal-server/app.py', (error, stdout, stderr) => {
-    if (error) {
-      console.error(`exec error: ${error}`);
-      return res.status(500).send(error);
-    }
-    res.send(stdout);
+  const app = spawn('python', ['../APoptimal-server/app.py']);
+
+  app.stdout.on('data', (data) => {
+    res.write(data);
+  });
+
+  app.stderr.on('data', (data) => {
+    console.error(`stderr: ${data}`);
+  });
+
+  app.on('close', (code) => {
+    res.end(`child process exited with code ${code}`);
   });
 });
