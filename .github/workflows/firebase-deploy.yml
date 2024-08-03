@@ -28,7 +28,7 @@ jobs:
 
       - name: Deploy to Firebase
         env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN_SERVER }}
         working-directory: "./Server Files/APoptimal-server"  # Quoted path
         run: |
           npm install -g firebase-tools
