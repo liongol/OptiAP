@@ -35,9 +35,9 @@ beacons_mac_id_dict = {
 optimal_locations = []
 optimal_locations_to_send = [{'x': 11, 'y': 13}]
 
-@app.route('/home')
+@app.route('/')
 def home():
-    return 'Hello, World!'
+    return "Hello, Firebase!"
 
 # HTTP route to handle beacons locations and colors
 @app.route('/beacons_locations_and_colors', methods=['POST'])
