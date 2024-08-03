@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "ap-optimal"
-  }
+    "default": "ap-optimal",
+    "ap-optimal-staging": "ap-optimal"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }

@@ -1,10 +1,10 @@
 const functions = require('firebase-functions');
-const { spawn } = require('child_process');
+const { exec } = require('child_process');
+const path = require('path');
 
 exports.app = functions.https.onRequest((req, res) => {
-  const app = spawn('python', ['../app.py']);
+  const app = exec(`python ${path.resolve(__dirname, '../app.py')}`);
 
-  console.log("somehting");
   app.stdout.on('data', (data) => {
     res.write(data);
   });
@@ -14,6 +14,6 @@ exports.app = functions.https.onRequest((req, res) => {
   });
 
   app.on('close', (code) => {
-    res.end(`child process exited with code ${code}`);
+    res.end();
   });
 });
