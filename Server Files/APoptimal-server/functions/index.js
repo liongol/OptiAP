@@ -2,8 +2,9 @@ const functions = require('firebase-functions');
 const { spawn } = require('child_process');
 
 exports.app = functions.https.onRequest((req, res) => {
-  const app = spawn('python', ['../APoptimal-server/app.py']);
+  const app = spawn('python', ['../app.py']);
 
+  console.log("somehting");
   app.stdout.on('data', (data) => {
     res.write(data);
   });
