@@ -15,6 +15,6 @@
   },
   "functions": {
     "source": "functions",
-    "runtime": "nodejs18"  
+    "runtime": "nodejs14"
   }
 }
