@@ -4,7 +4,7 @@ const path = require('path');
 
 exports.app = functions.https.onRequest((req, res) => {
     console.log("in index.js - request received");
-    const app = spawn('python', [path.resolve(__dirname, '../APoptimal-server/app.py')]);
+    const app = spawn('python', [path.resolve(__dirname, '../app.py')]);
 
     app.stdout.on('data', (data) => {
         console.log(`stdout: ${data}`);
