@@ -1,0 +1,299 @@
+[debug] [2024-07-31T19:21:17.554Z] ----------------------------------------------------------------------
+[debug] [2024-07-31T19:21:17.556Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Yanai Paran\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-07-31T19:21:17.557Z] CLI Version:   13.14.2
+[debug] [2024-07-31T19:21:17.557Z] Platform:      win32
+[debug] [2024-07-31T19:21:17.557Z] Node Version:  v18.15.0
+[debug] [2024-07-31T19:21:17.558Z] Time:          Wed Jul 31 2024 22:21:17 GMT+0300 (שעון ישראל (קיץ))
+[debug] [2024-07-31T19:21:17.558Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-07-31T19:21:17.567Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-07-31T19:21:17.567Z] > authorizing via signed-in user (yanaiparan@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Yanai Paran\PycharmProjects\APoptimal-server
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-07-31T19:21:25.058Z] > refreshing access token with scopes: []
+[debug] [2024-07-31T19:21:25.060Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-07-31T19:21:25.061Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-07-31T19:21:25.497Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-07-31T19:21:25.498Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-07-31T19:21:25.514Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2024-07-31T19:21:26.160Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2024-07-31T19:21:26.161Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project ap-optimal (AP-Optimal) 
+[info] 
+=== Hosting Setup
+[debug] [2024-07-31T19:21:27.571Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ap-optimal [none]
+[debug] [2024-07-31T19:21:28.029Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ap-optimal 200
+[debug] [2024-07-31T19:21:28.029Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ap-optimal {"projectId":"ap-optimal","projectNumber":"976788861335","displayName":"AP-Optimal","name":"projects/ap-optimal","resources":{"hostingSite":"ap-optimal"},"state":"ACTIVE","etag":"1_69f6edfe-4196-4d1e-9cd6-c70914390227"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[info] +  Wrote public/404.html 
+[debug] [2024-07-31T19:22:27.858Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2024-07-31T19:22:28.189Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2024-07-31T19:22:28.189Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"10.12.4","browserURL":"https://www.gstatic.com/firebasejs/10.12.4/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/10.12.4/firebase.tgz"},"live":{"version":"10.12","browserURL":"https://www.gstatic.com/firebasejs/live/10.12/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/10.12/firebase.tgz"},"components":{"analytics":"https://www.gstatic.com/firebasejs/10.12.4/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js","app-check":"https://www.gstatic.com/firebasejs/10.12.4/firebase-app-check.js","auth":"https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js","auth/cordova":"https://www.gstatic.com/firebasejs/10.12.4/firebase-auth/cordova.js","auth/web-extension":"https://www.gstatic.com/firebasejs/10.12.4/firebase-auth/web-extension.js","functions":"https://www.gstatic.com/firebasejs/10.12.4/firebase-functions.js","firestore":"https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js","firestore/lite":"https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore/lite.js","installations":"https://www.gstatic.com/firebasejs/10.12.4/firebase-installations.js","storage":"https://www.gstatic.com/firebasejs/10.12.4/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/10.12.4/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/10.12.4/firebase-remote-config.js","messaging":"https://www.gstatic.com/firebasejs/10.12.4/firebase-messaging.js","messaging/sw":"https://www.gstatic.com/firebasejs/10.12.4/firebase-messaging/sw.js","database":"https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js","vertexai-preview":"https://www.gstatic.com/firebasejs/10.12.4/firebase-vertexai-preview.js","firestore.memory":"https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.memory.js"}}
+[info] +  Wrote public/index.html 
+[info] 
+[info] i  Detected a .git folder at C:\Users\Yanai Paran\PycharmProjects\APoptimal-server 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=664512040&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2024-07-31T19:22:49.010Z] >>> [apiv2][query] POST https://github.com/login/oauth/access_token [none]
+[debug] [2024-07-31T19:22:49.010Z] >>> [apiv2][body] POST https://github.com/login/oauth/access_token [stream]
+[debug] [2024-07-31T19:22:49.522Z] <<< [apiv2][status] POST https://github.com/login/oauth/access_token 200
+[debug] [2024-07-31T19:22:49.523Z] <<< [apiv2][body] POST https://github.com/login/oauth/access_token {"access_token":"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","token_type":"bearer","scope":"read:user,repo"}
+[debug] [2024-07-31T19:22:49.531Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2024-07-31T19:22:50.050Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2024-07-31T19:22:50.051Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"Yanai99","id":91022643,"node_id":"MDQ6VXNlcjkxMDIyNjQz","avatar_url":"https://avatars.githubusercontent.com/u/91022643?v=4","gravatar_id":"","url":"https://api.github.com/users/Yanai99","html_url":"https://github.com/Yanai99","followers_url":"https://api.github.com/users/Yanai99/followers","following_url":"https://api.github.com/users/Yanai99/following{/other_user}","gists_url":"https://api.github.com/users/Yanai99/gists{/gist_id}","starred_url":"https://api.github.com/users/Yanai99/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Yanai99/subscriptions","organizations_url":"https://api.github.com/users/Yanai99/orgs","repos_url":"https://api.github.com/users/Yanai99/repos","events_url":"https://api.github.com/users/Yanai99/events{/privacy}","received_events_url":"https://api.github.com/users/Yanai99/received_events","type":"User","site_admin":false,"name":null,"company":null,"blog":"","location":null,"email":null,"hireable":null,"bio":null,"twitter_username":null,"public_repos":13,"public_gists":0,"followers":3,"following":4,"created_at":"2021-09-19T15:49:37Z","updated_at":"2024-07-24T12:19:59Z","private_gists":0,"total_private_repos":0,"owned_private_repos":0,"disk_usage":277998,"collaborators":0,"two_factor_authentication":false,"plan":{"name":"pro","space":976562499,"collaborators":0,"private_repos":9999}}
+[info] 
+[info] +  Success! Logged into GitHub as Yanai99 
+[info] 
+[debug] [2024-07-31T19:23:52.871Z] >>> [apiv2][query] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server/actions/secrets/public-key type=owner
+[debug] [2024-07-31T19:23:53.329Z] <<< [apiv2][status] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server/actions/secrets/public-key 404
+[debug] [2024-07-31T19:23:53.329Z] <<< [apiv2][body] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2024-07-31T19:24:00.937Z] >>> [apiv2][query] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server/actions/secrets/public-key type=owner
+[debug] [2024-07-31T19:24:01.492Z] <<< [apiv2][status] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server/actions/secrets/public-key 404
+[debug] [2024-07-31T19:24:01.494Z] <<< [apiv2][body] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2024-07-31T19:24:13.570Z] >>> [apiv2][query] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server/actions/secrets/public-key type=owner
+[debug] [2024-07-31T19:24:14.020Z] <<< [apiv2][status] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server/actions/secrets/public-key 404
+[debug] [2024-07-31T19:24:14.020Z] <<< [apiv2][body] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2024-07-31T19:26:03.520Z] >>> [apiv2][query] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server/actions/secrets/public-key type=owner
+[debug] [2024-07-31T19:26:03.982Z] <<< [apiv2][status] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server/actions/secrets/public-key 404
+[debug] [2024-07-31T19:26:03.982Z] <<< [apiv2][body] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2024-07-31T19:26:57.293Z] >>> [apiv2][query] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server/actions/secrets/public-key type=owner
+[debug] [2024-07-31T19:26:57.739Z] <<< [apiv2][status] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server/actions/secrets/public-key 404
+[debug] [2024-07-31T19:26:57.739Z] <<< [apiv2][body] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2024-07-31T19:27:16.179Z] >>> [apiv2][query] GET https://api.github.com/repos/OptiAP-deployed-server/actions/secrets/public-key type=owner
+[debug] [2024-07-31T19:27:16.619Z] <<< [apiv2][status] GET https://api.github.com/repos/OptiAP-deployed-server/actions/secrets/public-key 404
+[debug] [2024-07-31T19:27:16.619Z] <<< [apiv2][body] GET https://api.github.com/repos/OptiAP-deployed-server/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2024-07-31T19:27:16.734Z] >>> [apiv2][query] GET https://api.github.com/repos/OptiAP-deployed-server/actions/secrets/public-key type=owner
+[debug] [2024-07-31T19:27:17.178Z] <<< [apiv2][status] GET https://api.github.com/repos/OptiAP-deployed-server/actions/secrets/public-key 404
+[debug] [2024-07-31T19:27:17.178Z] <<< [apiv2][body] GET https://api.github.com/repos/OptiAP-deployed-server/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2024-07-31T19:27:17.899Z] >>> [apiv2][query] GET https://api.github.com/repos/OptiAP-deployed-server/actions/secrets/public-key type=owner
+[debug] [2024-07-31T19:27:18.302Z] <<< [apiv2][status] GET https://api.github.com/repos/OptiAP-deployed-server/actions/secrets/public-key 404
+[debug] [2024-07-31T19:27:18.302Z] <<< [apiv2][body] GET https://api.github.com/repos/OptiAP-deployed-server/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2024-07-31T19:27:30.892Z] >>> [apiv2][query] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server/actions/secrets/public-key type=owner
+[debug] [2024-07-31T19:27:31.370Z] <<< [apiv2][status] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server/actions/secrets/public-key 404
+[debug] [2024-07-31T19:27:31.371Z] <<< [apiv2][body] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2024-07-31T19:28:45.574Z] >>> [apiv2][query] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server.git/actions/secrets/public-key type=owner
+[debug] [2024-07-31T19:28:46.025Z] <<< [apiv2][status] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server.git/actions/secrets/public-key 404
+[debug] [2024-07-31T19:28:46.026Z] <<< [apiv2][body] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server.git/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2024-07-31T19:28:48.419Z] >>> [apiv2][query] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server.git/actions/secrets/public-key type=owner
+[debug] [2024-07-31T19:28:48.841Z] <<< [apiv2][status] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server.git/actions/secrets/public-key 404
+[debug] [2024-07-31T19:28:48.842Z] <<< [apiv2][body] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server.git/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2024-07-31T19:28:52.438Z] >>> [apiv2][query] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server.git/actions/secrets/public-key type=owner
+[debug] [2024-07-31T19:28:52.851Z] <<< [apiv2][status] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server.git/actions/secrets/public-key 404
+[debug] [2024-07-31T19:28:52.852Z] <<< [apiv2][body] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server.git/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2024-07-31T19:29:38.119Z] >>> [apiv2][query] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server.git/actions/secrets/public-key type=owner
+[debug] [2024-07-31T19:29:38.588Z] <<< [apiv2][status] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server.git/actions/secrets/public-key 404
+[debug] [2024-07-31T19:29:38.588Z] <<< [apiv2][body] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server.git/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2024-07-31T19:29:39.544Z] >>> [apiv2][query] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server.git/actions/secrets/public-key type=owner
+[debug] [2024-07-31T19:29:40.010Z] <<< [apiv2][status] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server.git/actions/secrets/public-key 404
+[debug] [2024-07-31T19:29:40.010Z] <<< [apiv2][body] GET https://api.github.com/repos/https://github.com/Yanai99/OptiAP-deployed-server.git/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2024-08-03T06:36:33.852Z] ----------------------------------------------------------------------
+[debug] [2024-08-03T06:36:33.854Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Yanai Paran\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init hosting
+[debug] [2024-08-03T06:36:33.854Z] CLI Version:   13.14.2
+[debug] [2024-08-03T06:36:33.855Z] Platform:      win32
+[debug] [2024-08-03T06:36:33.855Z] Node Version:  v18.15.0
+[debug] [2024-08-03T06:36:33.856Z] Time:          Sat Aug 03 2024 09:36:33 GMT+0300 (שעון ישראל (קיץ))
+[debug] [2024-08-03T06:36:33.856Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-08-03T06:36:33.864Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-08-03T06:36:33.864Z] > authorizing via signed-in user (yanaiparan@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Yanai Paran\OneDrive\C.S\Hakademit\OptimalAP\Server FIles\APoptimal-server
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-08-03T06:36:47.080Z] > refreshing access token with scopes: []
+[debug] [2024-08-03T06:36:47.082Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-08-03T06:36:47.083Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-08-03T06:36:47.456Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-08-03T06:36:47.456Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-08-03T06:36:47.472Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2024-08-03T06:36:48.177Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2024-08-03T06:36:48.177Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project flutter-portfolio-a34b6 (flutter-portfolio) 
+[info] 
+=== Hosting Setup
+[debug] [2024-08-03T06:36:58.635Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/flutter-portfolio-a34b6 [none]
+[debug] [2024-08-03T06:36:59.092Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/flutter-portfolio-a34b6 200
+[debug] [2024-08-03T06:36:59.092Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/flutter-portfolio-a34b6 {"projectId":"flutter-portfolio-a34b6","projectNumber":"660296082526","displayName":"flutter-portfolio","name":"projects/flutter-portfolio-a34b6","resources":{"hostingSite":"flutter-portfolio-a34b6"},"state":"ACTIVE","etag":"1_ca6a977f-a7df-4c40-9cbb-819e3558203c"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2024-08-03T06:37:18.565Z] ----------------------------------------------------------------------
+[debug] [2024-08-03T06:37:18.567Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Yanai Paran\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init hosting
+[debug] [2024-08-03T06:37:18.567Z] CLI Version:   13.14.2
+[debug] [2024-08-03T06:37:18.568Z] Platform:      win32
+[debug] [2024-08-03T06:37:18.568Z] Node Version:  v18.15.0
+[debug] [2024-08-03T06:37:18.568Z] Time:          Sat Aug 03 2024 09:37:18 GMT+0300 (שעון ישראל (קיץ))
+[debug] [2024-08-03T06:37:18.569Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-08-03T06:37:18.577Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-08-03T06:37:18.577Z] > authorizing via signed-in user (yanaiparan@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Yanai Paran\OneDrive\C.S\Hakademit\OptimalAP\Server FIles\APoptimal-server
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-08-03T06:37:22.715Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2024-08-03T06:37:23.343Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2024-08-03T06:37:23.344Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project flutter-portfolio-a34b6 (flutter-portfolio) 
+[info] 
+=== Hosting Setup
+[debug] [2024-08-03T06:37:29.001Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/flutter-portfolio-a34b6 [none]
+[debug] [2024-08-03T06:37:29.424Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/flutter-portfolio-a34b6 200
+[debug] [2024-08-03T06:37:29.425Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/flutter-portfolio-a34b6 {"projectId":"flutter-portfolio-a34b6","projectNumber":"660296082526","displayName":"flutter-portfolio","name":"projects/flutter-portfolio-a34b6","resources":{"hostingSite":"flutter-portfolio-a34b6"},"state":"ACTIVE","etag":"1_ca6a977f-a7df-4c40-9cbb-819e3558203c"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
