@@ -19,7 +19,10 @@ const Step3 =(props)=>
                         <input
                             type="number"
                             value={props.distance}
-                            onChange={(e) => props.setDistance(e.target.value)}
+                            onChange={(e) => {
+                                props.setDistance(e.target.value);
+                                console.log('distance:', e.target.value);
+                            }}
                         />
                     </label>
                 </form>
@@ -61,7 +64,13 @@ const Step3 =(props)=>
                     </button>
                 </td>
                 <td>
-                    <button className={'buttonGrey'} onClick={() => { props.setStepNumber('4')}}>Next</button>
+                    <button
+                        className={'buttonGrey'}
+                        onClick={() => { props.setStepNumber('4'); }}
+                        style={{ display: (props.arrayTwoDotsImg.length > 1 && props.distance!==0) ? 'inline-block' : 'none' }}
+                    >
+                        Next
+                    </button>
                 </td>
             </table>
             <Underline/>

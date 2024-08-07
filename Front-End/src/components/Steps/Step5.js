@@ -8,13 +8,13 @@ const getTableOfAps = (arrayApsLocations) =>{
         <div style={{ fontFamily: 'Poppins, sans-serif', fontSize: '20px', fontWeight: 'bold' }}>
             <table style={{paddingLeft: 530}}>
                 <tr>
-                    <th style={{border:'1px solid black'}}>Ap</th>
-                    <th style={{border:'1px solid black'}}>Location</th>
+                    <th style={{border:'1px solid black'}}>Access Point</th>
+                    <th style={{border:'1px solid black'}}>Location (x,y) </th>
                 </tr>
                 {arrayApsLocations.map((coordinate, index) => (
                     <tr>
                         <td style={{border:'1px solid black'}}>#{index + 1}</td>
-                        <td style={{border:'1px solid black'}}>({coordinate.x},{coordinate.y})</td>
+                        <td style={{border:'1px solid black'}}>({coordinate.xReality},{coordinate.yReality})</td>
                     </tr>))}
             </table>
         </div>);
@@ -27,7 +27,7 @@ const Step5 =(props)=>
         <div>
             <Header goToPage={props.goToPage}/>
             <p className="textHead">Step 5</p>
-            <pre className="textPara">{"Done! \n You can now configure your wireless access points for optimal signal coverage by placing them in the locations given below." }</pre>
+            <pre className="textPara">{"Done! \n You can now configure your wireless access points for optimal signal coverage by placing them in the locations given below.\n\n" }</pre>
             <div className="image-preview">
                 <img id="image" src={props.uploadedImg} alt="Uploaded Map" style={{ maxWidth: '100%' }}/>
                 {props.arrayApsLocations.map((coordinate, index) => (
@@ -48,9 +48,6 @@ const Step5 =(props)=>
             {getTableOfAps(props.arrayApsLocations)}
             <p>
                 <button className={'buttonBlue'} onClick={() =>props.setStepNumber('Welcome')}>Back to Home Page</button>
-            </p>
-            <p>
-                <button className={'buttonBlue'} onClick={() =>props.SendDone()}>Done</button>
             </p>
             <Underline/>
         </div>

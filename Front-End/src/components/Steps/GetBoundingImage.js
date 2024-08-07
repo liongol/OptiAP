@@ -7,20 +7,18 @@ const GetBoundingImage=(props)=>
     if (imageElement)
     {
         const rect = imageElement.getBoundingClientRect();
-        imgBounding = [
-            rect.top,
-            rect.left,
-            rect.right,
-            rect.bottom,
-            rect.width,
-            rect.height
-        ];
+        imgBounding = {
+            top: rect.top,
+            left: rect.left,
+            right: rect.right,
+            bottom: rect.bottom,
+            width: rect.width,
+            height: rect.height
+        };
     }
 
     props.setArrayBounding(imgBounding);
 
-    return(
-        <p>{imgBounding[0]} , {imgBounding[1]} , {imgBounding[2]} , {imgBounding[3]} , {imgBounding[4]} , {imgBounding[5]} </p>
-    );
+    return;
 }
 export default GetBoundingImage;

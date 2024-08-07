@@ -1,21 +1,24 @@
 import './step.css';
 import Header from "../Headers/Header";
 import Underline from "../Underline";
-import React from 'react';
+import React, {useState} from 'react';
 import '../../ButtonsDesigns.css';
 import videojs from 'video.js';
 import Step2Exp from '../../assets/Step2Exp.mp4';
+import GetBoundingImage from "./GetBoundingImage";
 
 const Step2 =(props)=> {
     return (
         <div>
+            {/*<GetBoundingImage idImg={props.uploadedImg} setArrayBounding={props.setArrayBounding}/>*/}
             <Header goToPage={props.goToPage}/>
             <p className="textHead">Step 2</p>
-            <pre className="textPara">{"Upload complete. \n Please mark the bottom-left corner of the submitted map. "}</pre>
+            <pre className="textPara">{"Upload complete. \n Please mark the top-left corner of the submitted map. \n\n"}</pre>
             <div className="image-preview">
                 <img id="image" src={props.uploadedImg} alt="Uploaded Map" style={{maxWidth: '100%'}}
                      onClick={(event) => {
                          props.setBeginningOfAxis([{x: event.pageX, y: event.pageY}]);
+                         console.log({x: event.pageX, y: event.pageY});
                      }}/>
                 {props.beginningOfAxis.length > 0 && (
                     <div
@@ -74,8 +77,16 @@ const Step2 =(props)=> {
                     </button>
                 </td>
                 <td>
-                    <button className={'buttonGrey'} onClick={() => {props.setArrayTwoDotsImg([]); props.setStepNumber('3')}}>Next</button>
-                </td>
+                    <button
+                        className={'buttonGrey'}
+                        onClick={() => {
+                            props.setArrayTwoDotsImg([]);
+                            props.setStepNumber('3');
+                        }}
+                        style={{ display: props.beginningOfAxis.length > 0 ? 'inline-block' : 'none' }}
+                    >
+                        Next
+                    </button>                </td>
             </table>
             <Underline/>
         </div>

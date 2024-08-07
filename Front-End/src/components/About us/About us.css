@@ -5,6 +5,7 @@
     font-weight: 600;
     line-height: 62px;
     text-align: center;
+    padding-top: 50px;
 }
 
 .para{
@@ -16,7 +17,8 @@
 }
 
 .shiftRight{
-    padding-left: 50px;
+    padding-left: 100px;
+    padding-top: 30px;
 }
 
 .text {
@@ -41,10 +43,7 @@
 }
 
 .imageProfile{
-    top: 2081px;
-    left: 224px;
-    width: 174px;
-    height: 172px;
+    width: 195px;
     border-radius: 100000px;
     background-position: center center;
     background-size: cover;

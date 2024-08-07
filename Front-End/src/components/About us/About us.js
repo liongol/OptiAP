@@ -38,7 +38,7 @@ function AboutUs(props) {
                 <tr>
                     <td className="text"><b>Yanai Paran</b></td>
                     <td className="text"><b>Or Asherov</b></td>
-                    <td className="text"><b>Lion Golovanevsky</b></td>
+                    <td className="text" ><b>Lion Golovanevsky</b></td>
                 </tr>
                 <tr>
                     <td className="text">Head of Back-End development</td>
@@ -46,9 +46,9 @@ function AboutUs(props) {
                     <td className="text">Head of IoT development</td>
                 </tr>
             </table>
-            <p className="shiftRight">
+            <div className="shiftRight">
                 <CardGetStarted goToPage={props.goToPage}/>
-            </p>
+            </div>
             <Underline/>
         </div>
     );

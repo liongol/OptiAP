@@ -93,16 +93,19 @@ const Step4 =(props)=>
             </div>
             {getTableOfBeacons(props.arrayBeaconsLocations, props.setArrayBeaconsLocations)}
             <table className={'tableBody'}>
-                <td><button className={'buttonGrey'} onClick={() => {props.setArrayTwoDotsImg([]); props.setDistance(0);
+                <td><button className={'buttonGrey'} onClick={() => {props.setArrayTwoDotsImg([]); props.setArrayBeaconsLocations([]); props.setDistance(0);
                     props.setStepNumber('3');}}>Back</button></td>
                 <td>
                     <button
                         className={'buttonGrey'}
                         onClick={() => {
-                            props.CorrectBeaconsLocations();
+                            // Uncomment and use these lines as needed
+                            // props.CorrectBeaconsLocations();
+                            // props.SendBeacnosLoc(props.arrayBeaconsLocations);
                             props.setStepNumber('loading');
-                            props.SendBeacnosLocAndRGB(props.arrayBeaconsLocations);
+                            props.SendDone();
                         }}
+                        style={{ display: props.arrayBeaconsLocations.length > 0 ? 'inline-block' : 'none' }}
                     >
                         Next
                     </button>
