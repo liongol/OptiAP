@@ -10,6 +10,7 @@ function Upload(props) {
         if (file) {
             const reader = new FileReader();
             reader.onload = (event) => {
+                console.log("this is what were setting at the img:::")
                 props.setUploadedImg(event.target.result);
                 props.setStepNumber('2');
             };

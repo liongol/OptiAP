@@ -14,6 +14,7 @@ const getRandomColor = () => {
     return [r,g,b];
 }
 
+
 const removeBeacon = (index, arrayBeaconsLocations, setArrayBeaconsLocations)=>{
     let tmp = [...arrayBeaconsLocations];
     tmp.splice(index, 1);
@@ -81,8 +82,8 @@ const Step4 =(props)=>
                         key={index}
                         style={{
                             position: 'absolute',
-                             left: coordinate.x,
-                            top: coordinate.y, 
+                            left: coordinate.x,
+                            top: coordinate.y,
                             width: '10px',
                             height: '10px',
                             borderRadius: '50%',
@@ -93,17 +94,19 @@ const Step4 =(props)=>
             </div>
             {getTableOfBeacons(props.arrayBeaconsLocations, props.setArrayBeaconsLocations)}
             <table className={'tableBody'}>
-                <td><button className={'buttonGrey'} onClick={() => {props.setArrayTwoDotsImg([]); props.setDistance(0);
+                <td><button className={'buttonGrey'} onClick={() => {props.setArrayTwoDotsImg([]); props.setArrayBeaconsLocations([]); props.setDistance(0);
                     props.setStepNumber('3');}}>Back</button></td>
                 <td>
                     <button
                         className={'buttonGrey'}
                         onClick={() => {
-                            props.CorrectBeaconsLocations();
+                            // Uncomment and use these lines as needed
+                            // props.CorrectBeaconsLocations();
+                            // props.SendBeacnosLoc(props.arrayBeaconsLocations);
                             props.setStepNumber('loading');
-                            props.SendBeacnosLocAndRGB(props.arrayBeaconsLocations);
                             props.SendDone();
                         }}
+                        style={{ display: props.arrayBeaconsLocations.length > 0 ? 'inline-block' : 'none' }}
                     >
                         Next
                     </button>

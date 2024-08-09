@@ -1,4 +1,4 @@
-name: Deploy to Firebase Hosting
+name: Deploy to Firebase Hosting and Functions
 
 on:
   push:
@@ -26,10 +26,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'  # Make sure the Node.js version matches your runtime in firebase.json
+
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools
+
       - name: Deploy to Firebase
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN_SERVER }}
-        working-directory: "./Server Files/APoptimal-server"  # Quoted path
         run: |
-          npm install -g firebase-tools
-          firebase deploy --only hosting
+          firebase deploy --only hosting,functions
