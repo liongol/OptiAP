@@ -47,23 +47,67 @@ const Step1 =(props)=>
     );
     }
     else{
-        return (
-            <form onSubmit={handleSignIn}>
-              <input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <button type="submit">Sign In</button>
-            </form>
-          );
+      return (
+        <form 
+          onSubmit={handleSignIn} 
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            width: '300px',
+            margin: '0 auto',
+            padding: '20px',
+            border: '1px solid #ccc',
+            borderRadius: '5px',
+            boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
+            backgroundColor: '#f9f9f9'
+          }}
+        >
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            style={{
+              width: '100%',
+              padding: '10px',
+              margin: '10px 0',
+              border: '1px solid #ccc',
+              borderRadius: '5px',
+              boxSizing: 'border-box'
+            }}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            style={{
+              width: '100%',
+              padding: '10px',
+              margin: '10px 0',
+              border: '1px solid #ccc',
+              borderRadius: '5px',
+              boxSizing: 'border-box'
+            }}
+          />
+          <button 
+            type="submit" 
+            style={{
+              width: '100%',
+              padding: '10px',
+              margin: '10px 0',
+              backgroundColor: '#007BFF',
+              color: '#fff',
+              border: 'none',
+              borderRadius: '5px',
+              cursor: 'pointer'
+            }}
+          >
+            Sign In
+          </button>
+        </form>
+      );
     }
 
 }

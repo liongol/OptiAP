@@ -14,7 +14,7 @@ const getTableOfAps = (arrayApsLocations) =>{
                 {arrayApsLocations.map((coordinate, index) => (
                     <tr>
                         <td style={{border:'1px solid black'}}>#{index + 1}</td>
-                        <td style={{border:'1px solid black'}}>({coordinate.xReality},{coordinate.yReality})</td>
+                        <td style={{border:'1px solid black'}}>({Math.round(coordinate.xReality)},{Math.round(coordinate.yReality)})</td>
                     </tr>))}
             </table>
         </div>);
@@ -35,8 +35,8 @@ const Step5 =(props)=>
                         key={index}
                         style={{
                             position: 'absolute',
-                            left: coordinate.x,
-                            top: coordinate.y,
+                            left:  Math.round(coordinate.x),
+                            top: Math.round(coordinate.y),
                             width: '10px',
                             height: '10px',
                             borderRadius: '50%',
